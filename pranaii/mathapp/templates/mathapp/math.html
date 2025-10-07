@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>BMI Calculator</title>
+    <style>
+        .goku {
+            width: 40%;
+
+            border: double 5px blue;
+            border-radius: 5%;
+            background: cyan;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 45px;
+            background-color:brown
+        }
+
+        form {
+
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        input {
+            margin-top: 10px;
+            width: 100%;
+            padding: 8px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="goku">
+            <h1>BMI CALCULATER</h1>
+            <h1>lakshmi pranay n-25017706</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label for="height">Heigth [cm]:</label>
+                <input type="text" id="height" name="height" required>
+
+                <label for="weight">Weight [kg]:</label>
+                <input type="text" id="weight" name="weight" required>
+
+                <input type="submit" value="CALCULATE_BMI">
+                {% if bmi %}
+                <h2>YOUR BMI: {{ bmi }}</h2>
+                {% if category %}
+                <p>Category: {{ category }}</p>
+                {% endif %}
+                {% endif %}
+        </div>
+
+        </form>
+
+        </div>
+    </center>
+</body>
+
+</html>
